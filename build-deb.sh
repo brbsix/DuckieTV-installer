@@ -16,6 +16,21 @@ warning(){
 }
 
 
+# Ensure prerequisites are installed
+check_prerequisites(){
+    local missing=()
+
+    for program in curl debtool junk1; do
+        hash "$program" &>/dev/null || missing+=("$program")
+    done
+
+    if (( ${#missing[@]} > 0 )); then
+        error "Please install the following program(s) before continuing: ${missing[*]}"
+        exit 1
+    fi
+}
+
+
 # Determine the archive's platform architecture
 get_architecture(){
     case $1 in
@@ -50,6 +65,8 @@ get_download_url(){
 
 PROGRAM=${0##*/}
 SCRIPT_DIRECTORY=$(realpath "$(dirname "$0")")
+
+check_prerequisites
 
 # enter the script directory
 cd "$SCRIPT_DIRECTORY" || {
