@@ -1,0 +1,8 @@
+Package: duckietv
+Priority: optional
+Section: editors
+Installed-Size: 92423
+Maintainer: SchizoDuckie
+Architecture: amd64
+Version: 1.1.3
+Description: TV show calendar

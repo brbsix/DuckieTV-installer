@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DuckieTV
+Icon=duckietv
+Exec=duckietv
+NoDisplay=false
+Categories=AudioVideo;
+StartupNotify=false
+Terminal=false
