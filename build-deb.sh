@@ -106,9 +106,7 @@ for file in DuckieTV-bin icudtl.dat nw.pak; do
 done
 
 # set file perms
-chmod 0755 ./duckietv/opt/duckietv/* || {
-    error "Failed to chmod package contents"
-}
+chmod 0755 ./duckietv/opt/duckietv/*
 
 # update architecture in control file
 sed -i "s/^\(Architecture:\) .*$/\1 $ARCHITECTURE/" ./duckietv/DEBIAN/control || {
