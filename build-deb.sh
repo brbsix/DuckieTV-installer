@@ -106,7 +106,8 @@ for file in DuckieTV-bin icudtl.dat nw.pak; do
 done
 
 # set file perms
-chmod 0755 ./duckietv/opt/duckietv/*
+chmod 0644 ./duckietv/usr/share/{applications/duckietv.desktop,pixmaps/duckietv.png}
+chmod 0755 ./duckietv/opt/duckietv/* ./duckietv/usr/bin/duckietv
 
 # update architecture in control file
 sed -i "s/^\(Architecture:\) .*$/\1 $ARCHITECTURE/" ./duckietv/DEBIAN/control || {
