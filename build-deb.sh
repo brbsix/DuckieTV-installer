@@ -93,6 +93,9 @@ else
     }
 fi
 
+# ensure directory exists
+mkdir -p ./duckietv/opt/duckietv/
+
 # copy files into package directory
 for file in DuckieTV-bin icudtl.dat nw.pak; do
     cp "$DESTDIR/DuckieTV/$file" ./duckietv/opt/duckietv/
