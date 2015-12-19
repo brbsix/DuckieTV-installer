@@ -94,15 +94,21 @@ else
 fi
 
 # ensure directory exists
-mkdir -p ./duckietv/opt/duckietv/
+mkdir -p ./duckietv/opt/duckietv/ || {
+    error "Failed to create directory './duckietv/opt/duckietv/'"
+}
 
 # copy files into package directory
 for file in DuckieTV-bin icudtl.dat nw.pak; do
-    cp "$DESTDIR/DuckieTV/$file" ./duckietv/opt/duckietv/
+    cp "$DESTDIR/DuckieTV/$file" ./duckietv/opt/duckietv/ || {
+        error "Failed to copy '$file' into './duckietv/opt/duckietv/'"
+    }
 done
 
 # set file perms
-chmod 0755 ./duckietv/opt/duckietv/*
+chmod 0755 ./duckietv/opt/duckietv/* || {
+    error "Failed to chmod package contents"
+}
 
 # update architecture in control file
 sed -i "s/^\(Architecture:\) .*$/\1 $ARCHITECTURE/" ./duckietv/DEBIAN/control || {
