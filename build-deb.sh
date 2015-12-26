@@ -136,9 +136,9 @@ sed -i "s/^\(Version:\) .*$/\1 $VERSION/" ./duckietv/DEBIAN/control || {
     error "Failed to update version string in ./duckietv/DEBIAN/control"
 }
 
-# build the archive
+# build the .deb
 debtool --build --md5sums ./duckietv/ || {
-    error "Failed to build archive"
+    error "Failed to build .deb"
 }
 
 # remove unpacked archive
