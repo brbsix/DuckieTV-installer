@@ -104,8 +104,9 @@ else
 fi
 
 # determine destination directory to unpack into
+info "Determining destination directory for unpacking '$ARCHIVE'"
 DESTDIR=$(tar -tf "$ARCHIVE" | head -n1 | sed 's:/$::') || {
-    error "Failed to determine destination directory for archive '$ARCHIVE'"
+    error "Failed to determine destination directory for unpacking '$ARCHIVE'"
 }
 
 # check whether archive is already unpacked
