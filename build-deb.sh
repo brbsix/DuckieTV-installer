@@ -20,7 +20,7 @@ warning(){
 check_prerequisites(){
     local missing=()
 
-    for program in curl debtool junk1; do
+    for program in curl debtool; do
         hash "$program" &>/dev/null || missing+=("$program")
     done
 
