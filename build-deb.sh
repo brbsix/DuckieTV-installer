@@ -154,7 +154,7 @@ sed -i "s/^\(Version:\) .*$/\1 $VERSION/" ./duckietv/DEBIAN/control || {
 # build the .deb
 info "Building .deb"
 debtool --build --md5sums ./duckietv/ || {
-    error "Failed to build .deb"
+    error "Failed to build .deb. Skipping cleanup..."
 }
 
 # remove unpacked archive
