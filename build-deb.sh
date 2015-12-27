@@ -70,7 +70,7 @@ get_download_url(){
 
 
 PROGRAM=${0##*/}
-SCRIPT_DIRECTORY=$(realpath "$(dirname "$0")")
+SCRIPT_DIRECTORY=$(readlink -m "$(dirname "$0")")
 
 info "Checking for prerequisites"
 check_prerequisites
