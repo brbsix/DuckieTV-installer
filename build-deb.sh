@@ -52,8 +52,8 @@ get_architecture(){
 
 # Get link to latest DuckieTV release
 get_download_url(){
-    python3 <<-EOF
-	import json, platform, re, requests
+    python2 <<-EOF
+	import json, platform, re, urllib
 
 	def get_download_url(assets):
 	    isX64 = re.search('x86_64|x86-64|Win64|x64|amd64|AMD64|WOW64|x64_64', platform.processor()) is not None
@@ -64,7 +64,7 @@ get_download_url(){
 
 	URL = 'https://api.github.com/repos/SchizoDuckie/DuckieTV/releases'
 
-	print(get_download_url(json.loads(requests.get(URL).text)[0]['assets']))
+	print(get_download_url(json.loads(urllib.urlopen(URL).read())[0]['assets']))
 	EOF
 }
 
