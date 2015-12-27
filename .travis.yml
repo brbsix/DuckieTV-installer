@@ -1,0 +1,9 @@
+language:
+  - bash  # bash maps to generic
+
+before_install:
+  - wget https://raw.githubusercontent.com/brbsix/debtool/master/debtool
+  - sudo install debtool /usr/local/bin
+
+script:
+  - make deb
