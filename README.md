@@ -1,5 +1,7 @@
 # DuckieTV Installer
 
+[![Build Status](https://travis-ci.org/brbsix/DuckieTV-installer.svg?branch=master)](https://travis-ci.org/brbsix/DuckieTV-installer)
+
 This tool creates a *.deb* package for the latest [DuckieTV](https://schizoduckie.github.io/DuckieTV/) stable release.
 
 ## Requirements
