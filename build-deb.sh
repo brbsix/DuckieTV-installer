@@ -98,7 +98,7 @@ if [[ -f $ARCHIVE ]]; then
 else
     # download archive
     info "Downloading archive from '$URL'"
-    curl -LOs "$URL" || {
+    curl -LOsS "$URL" || {
         error "Failed to download '$URL'"
     }
 fi
